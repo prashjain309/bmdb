@@ -5,12 +5,23 @@ module.exports = {
     entry: './app/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'index-bundle.js'
+        filename: 'index-bundle.js',
+        publicPath: '/'
+    },
+    devServer: {
+        historyApiFallback: true,
     },
     module: {
         rules:[
             { test: /\.(js)$/ , use: 'babel-loader' },
-            { test: /\.css$/ , use: ['style-loader','css-loader'] }
+            { test: /\.css$/ , use: ['style-loader','css-loader'] },
+            {
+                test: /\.(?:png|jpg|svg)$/,
+                loader: 'url-loader',
+                query: {
+                // Inline images smaller than 10kb as data URIs        limit: 10000
+              }
+            }
         ]
     },
     plugins: [new HtmlWebpackPlugin({
