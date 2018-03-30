@@ -6,8 +6,8 @@ import App from './components/app';
 require('./index.css');
 
 ReactDom.render(
-    <BrowserRouter>
-        <App />
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <App basename={process.env.PUBLIC_URL} />
     </BrowserRouter>,
     document.getElementById('app')
 );
