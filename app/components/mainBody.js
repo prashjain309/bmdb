@@ -4,8 +4,7 @@ import Popular from './popular'
 import Favorite from './favorite'
 
 const MainBody = () => (
-    <div>
-    <Header />
+  <div>
     <Switch>
       <Route exact path='/' component={Popular}/>
       <Route path='/favorite' component={Favorite}/>
