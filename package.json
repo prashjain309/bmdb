@@ -40,7 +40,7 @@
   "bugs": {
     "url": "https://github.com/prashjain309/bmdb/issues"
   },
-  "homepage": "https://github.com/prashjain309/bmdb#readme",
+  "homepage": "https://github.com/prashjain309/bmdb/",
   "dependencies": {
     "eslint": "^4.19.1",
     "react": "^16.2.0",

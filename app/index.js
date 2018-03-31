@@ -7,7 +7,7 @@ require('./index.css');
 
 ReactDom.render(
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-        <App basename={process.env.PUBLIC_URL} />
+        <App />
     </BrowserRouter>,
     document.getElementById('app')
 );
