@@ -9,8 +9,8 @@ class Header extends React.Component{
                 <div className='logo-wrapper'> 
                     <img src={mainLogo} alt="BMDB"/>
                 </div>
-                <div><Link to='/'>Popular</Link></div>
-                <div><Link to='/favorite'>Favorite</Link></div>
+                <div><Link to={ process.env.PUBLIC_URL + '/' }>Popular</Link></div>
+                <div><Link to={ process.env.PUBLIC_URL + '/favorite' }>Favorite</Link></div>
                 <div className='searchbar-wrapper'>Search bar</div>
             </div>
         )

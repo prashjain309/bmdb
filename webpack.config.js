@@ -1,5 +1,6 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var webpack = require('webpack');
 module.exports = (env, argv) => ({
     entry: './app/index.js',
     output: {
@@ -36,5 +37,9 @@ module.exports = (env, argv) => ({
     },
     plugins: [new HtmlWebpackPlugin({
         template: 'app/index.html'
-    })]
+    }),
+    new webpack.DefinePlugin({
+        'process.env.PUBLIC_URL': ( argv.mode === 'production' ) ? '"/bmdb"': '""',
+    }),
+    ]
 });
