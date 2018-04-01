@@ -1,11 +1,10 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-
-module.exports = {
+module.exports = (env, argv) => ({
     entry: './app/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        publicPath: '',
+        publicPath: argv.mode === 'production' ? '/bmdb' : '',
         filename: 'index-bundle.js'
     },
     devServer: {
@@ -38,4 +37,4 @@ module.exports = {
     plugins: [new HtmlWebpackPlugin({
         template: 'app/index.html'
     })]
-}
+});
