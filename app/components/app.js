@@ -3,7 +3,7 @@ import Header from './header'
 import MainBody from './mainBody'
 
 const App = () => (
-  <div>
+  <div className='app'>
     <Header />
     <MainBody />
   </div>

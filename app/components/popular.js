@@ -16,10 +16,10 @@ class Popular extends React.Component {
       return results.json();
     })
     .then(data => {
-      debugger;
       let movies = data.results
       .map((movie) => {
         let props = {
+          key:movie.id,
           id: movie.id,
           language: movie.original_language,
           popularity: movie.popularity,          
@@ -54,7 +54,7 @@ class Popular extends React.Component {
     // }
 
     return(
-      <div className="movies Wrapper" >
+      <div className="movies-wrapper" >
         { (this.state.movies) ? this.state.movies :<Loading/> }
       </div>
     )

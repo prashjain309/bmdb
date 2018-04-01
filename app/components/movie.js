@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Loading = (props) => (
-    <div key={props.id}>
+    <div className='movie-container' key={props.id}>
         <div data-imgsrc= {"http://image.tmdb.org/t/p/w185/" + props.posterPath}>
             <div>
                 {props.popularity}<br/>
