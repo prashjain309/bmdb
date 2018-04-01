@@ -4,7 +4,7 @@ module.exports = (env, argv) => ({
     entry: './app/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        publicPath: argv.mode === 'production' ? '/bmdb' : '',
+        publicPath: argv.mode === 'production' ? '/bmdb' : '/',
         filename: 'index-bundle.js'
     },
     devServer: {
