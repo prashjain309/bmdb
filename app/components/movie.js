@@ -1,8 +1,8 @@
 import React from 'react'
 
 const Loading = (props) => (
-    <div className='movie-container' key={props.id}>
-        <div data-imgsrc= {"http://image.tmdb.org/t/p/w185/" + props.posterPath}>
+    <div className='movie-container' key={props.id} style = {{ backgroundImage : "url(http://image.tmdb.org/t/p/w185/" + props.posterPath + ")"}}>
+        <div>
             <div>
                 {props.popularity}<br/>
                 {props.releaseDate}<br/>
