@@ -2,7 +2,6 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import Popular from './popular'
 import Favorite from './favorite'
-import Movie from './movie'
 
 class MainBody extends React.Component {
   constructor() {
@@ -30,11 +29,12 @@ class MainBody extends React.Component {
           releaseDate: movie.release_date, 
           title: movie.original_title
         }
-        return(
-          <Movie {...props}/>
-        )
+        return(props)
       });
-      
+      movies && movies.sort(function(a, b) {
+        return b.rating - a.rating
+      });
+
       this.setState({movies: movies})
     })      
     .catch(error => console.error(error))
@@ -49,7 +49,7 @@ class MainBody extends React.Component {
   render(){
     let movieList = this.state.movies;
     let favoriteMovieList = this.state.movies && this.state.movies.filter((movie)=>{
-      return movie.props.rating > 8.0
+      return movie.rating > 7.0
     })
     
     return(
