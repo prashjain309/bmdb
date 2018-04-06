@@ -10,7 +10,7 @@ const Favorite = (props) => {
 
   return(
     <div className="movies-wrapper" >
-        { (props.movies) ? favoriteList : "<p>NO MOVIES selecte</p>" }
+        { (props.movies && props.movies.length > 0) ? favoriteList : <p className='not-available'>No movie is not your Favorite</p> }
       </div>
   )
 }

@@ -47,11 +47,17 @@ class MainBody extends React.Component {
   }
 
   render(){
-    let movieList = this.state.movies;
-    let favoriteMovieList = this.state.movies && this.state.movies.filter((movie)=>{
-      return movie.rating > 7.0
+    let lowerMovieNameCase = this.props.searchMovie.toLowerCase();
+    let searchMovieList = this.props.searchMovie && this.state.movies.filter((movie) => {
+      return movie.title.toLowerCase().indexOf(lowerMovieNameCase) > -1 
     })
     
+    let movieList = searchMovieList || this.state.movies;
+    let favoriteMovieList = searchMovieList || this.state.movies;
+    favoriteMovieList = favoriteMovieList && favoriteMovieList.filter((movie)=>{
+      return movie.rating > 7.0
+    })
+
     return(
       <div className='main-body'>
       <Switch>
